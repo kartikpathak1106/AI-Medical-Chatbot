@@ -1,0 +1,104 @@
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|##########| 103/103 [00:00<00:00, 3945.76it/s]
+Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.
+Traceback (most recent call last):
+  File "C:\Users\intel\Desktop\MEDIBOT\connect_memory_with_llm.py", line 62, in <module>
+    response = qa_chain.invoke({'query': user_query})
+  File "C:\Users\intel\.virtualenvs\MEDIBOT-HATERDA9\Lib\site-packages\langchain\chains\base.py", line 163, in invoke
+    raise e
+  File "C:\Users\intel\.virtualenvs\MEDIBOT-HATERDA9\Lib\site-packages\langchain\chains\base.py", line 153, in invoke
+    self._call(inputs, run_manager=run_manager)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\intel\.virtualenvs\MEDIBOT-HATERDA9\Lib\site-packages\langchain\chains\retrieval_qa\base.py", line 153, in _call
+    answer = self.combine_documents_chain.run(
+        input_documents=docs, question=question, callbacks=_run_manager.get_child()
+    )
+  File "C:\Users\intel\.virtualenvs\MEDIBOT-HATERDA9\Lib\site-packages\langchain_core\_api\deprecation.py", line 180, in warning_emitting_wrapper
+    return wrapped(*args, **kwargs)
+  File "C:\Users\intel\.virtualenvs\MEDIBOT-HATERDA9\Lib\site-packages\langchain\chains\base.py", line 602, in run
+    return self(kwargs, callbacks=callbacks, tags=tags, metadata=metadata)[
+           ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\intel\.virtualenvs\MEDIBOT-HATERDA9\Lib\site-packages\langchain_core\_api\deprecation.py", line 180, in warning_emitting_wrapper
+    return wrapped(*args, **kwargs)
+  File "C:\Users\intel\.virtualenvs\MEDIBOT-HATERDA9\Lib\site-packages\langchain\chains\base.py", line 380, in __call__
+    return self.invoke(
+           ~~~~~~~~~~~^
+        inputs,
+        ^^^^^^^
+    ...<2 lines>...
+        include_run_info=include_run_info,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\intel\.virtualenvs\MEDIBOT-HATERDA9\Lib\site-packages\langchain\chains\base.py", line 163, in invoke
+    raise e
+  File "C:\Users\intel\.virtualenvs\MEDIBOT-HATERDA9\Lib\site-packages\langchain\chains\base.py", line 153, in invoke
+    self._call(inputs, run_manager=run_manager)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\intel\.virtualenvs\MEDIBOT-HATERDA9\Lib\site-packages\langchain\chains\combine_documents\base.py", line 138, in _call
+    output, extra_return_dict = self.combine_docs(
+                                ~~~~~~~~~~~~~~~~~^
+        docs, callbacks=_run_manager.get_child(), **other_keys
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\intel\.virtualenvs\MEDIBOT-HATERDA9\Lib\site-packages\langchain\chains\combine_documents\stuff.py", line 257, in combine_docs
+    return self.llm_chain.predict(callbacks=callbacks, **inputs), {}
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\intel\.virtualenvs\MEDIBOT-HATERDA9\Lib\site-packages\langchain\chains\llm.py", line 315, in predict
+    return self(kwargs, callbacks=callbacks)[self.output_key]
+           ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\intel\.virtualenvs\MEDIBOT-HATERDA9\Lib\site-packages\langchain_core\_api\deprecation.py", line 180, in warning_emitting_wrapper
+    return wrapped(*args, **kwargs)
+  File "C:\Users\intel\.virtualenvs\MEDIBOT-HATERDA9\Lib\site-packages\langchain\chains\base.py", line 380, in __call__
+    return self.invoke(
+           ~~~~~~~~~~~^
+        inputs,
+        ^^^^^^^
+    ...<2 lines>...
+        include_run_info=include_run_info,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\intel\.virtualenvs\MEDIBOT-HATERDA9\Lib\site-packages\langchain\chains\base.py", line 163, in invoke
+    raise e
+  File "C:\Users\intel\.virtualenvs\MEDIBOT-HATERDA9\Lib\site-packages\langchain\chains\base.py", line 153, in invoke
+    self._call(inputs, run_manager=run_manager)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\intel\.virtualenvs\MEDIBOT-HATERDA9\Lib\site-packages\langchain\chains\llm.py", line 125, in _call
+    response = self.generate([inputs], run_manager=run_manager)
+  File "C:\Users\intel\.virtualenvs\MEDIBOT-HATERDA9\Lib\site-packages\langchain\chains\llm.py", line 137, in generate
+    return self.llm.generate_prompt(
+           ~~~~~~~~~~~~~~~~~~~~~~~~^
+        prompts,
+        ^^^^^^^^
+    ...<2 lines>...
+        **self.llm_kwargs,
+        ^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\intel\.virtualenvs\MEDIBOT-HATERDA9\Lib\site-packages\langchain_core\language_models\llms.py", line 750, in generate_prompt
+    return self.generate(prompt_strings, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\intel\.virtualenvs\MEDIBOT-HATERDA9\Lib\site-packages\langchain_core\language_models\llms.py", line 944, in generate
+    output = self._generate_helper(
+        prompts, stop, run_managers, bool(new_arg_supported), **kwargs
+    )
+  File "C:\Users\intel\.virtualenvs\MEDIBOT-HATERDA9\Lib\site-packages\langchain_core\language_models\llms.py", line 787, in _generate_helper
+    raise e
+  File "C:\Users\intel\.virtualenvs\MEDIBOT-HATERDA9\Lib\site-packages\langchain_core\language_models\llms.py", line 774, in _generate_helper
+    self._generate(
+    ~~~~~~~~~~~~~~^
+        prompts,
+        ^^^^^^^^
+    ...<3 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "C:\Users\intel\.virtualenvs\MEDIBOT-HATERDA9\Lib\site-packages\langchain_core\language_models\llms.py", line 1508, in _generate
+    self._call(prompt, stop=stop, run_manager=run_manager, **kwargs)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\intel\.virtualenvs\MEDIBOT-HATERDA9\Lib\site-packages\langchain_huggingface\llms\huggingface_endpoint.py", line 258, in _call
+    response = self.client.post(
+               ^^^^^^^^^^^^^^^^
+AttributeError: 'InferenceClient' object has no attribute 'post'
